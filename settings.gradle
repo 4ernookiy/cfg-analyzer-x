@@ -1,0 +1,6 @@
+include 'analyzer'
+include 'viewer'
+
+//project("analyzer").projectDir = new File("analyzer/")
+//project("viewer").projectDir = new File("viewer/")
+

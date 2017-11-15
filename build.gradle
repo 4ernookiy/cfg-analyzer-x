@@ -1,0 +1,54 @@
+allprojects {
+	apply plugin: 'java'
+	apply plugin: 'idea'
+	apply plugin: 'eclipse'
+}
+/*
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'maven-publish'
+
+	publishing {
+		repositories {
+			maven {
+				name 'myMaven'
+				def suffix = project.version.endsWith("SNAPSHOT") ? "snapshots" : "releases"
+				url baseUrl + suffix
+			}
+		}
+		publications {
+			core(MavenPublication) {
+				artifactId project.name
+				artifact jar
+			}		
+		}
+	}
+}
+
+project(':root:analyzer') {
+	ext {
+		sharedManifest = manifest {
+		   	attributes("Implementation-Title": project.name,
+						"Implementation-Version": 1.0 )
+		}
+	}
+	jar {
+		manifest = project.manifest {
+	        from sharedManifest
+	    }    
+	}
+}
+project(':root:projectB') {
+	ext {
+		sharedManifest = manifest {
+		   	attributes("Implementation-Title": project.name,
+						"Implementation-Version": 2.0 )
+		}
+	}
+	jar {
+		manifest = project.manifest {
+	        from sharedManifest
+	    }    
+	}
+}
+*/

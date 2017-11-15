@@ -1,0 +1,65 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'checkstyle'
+apply plugin: 'maven-publish'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+group = 'com.datalex.tdp'
+version = '0.0.4-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+task sourceJar(type: Jar) {
+    classifier 'sources'
+    from sourceSets.main.allJava
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+			artifactId 'd4.bp.demo'
+
+            artifact tasks.sourceJar
+			from components.java
+        }
+    }
+}
+
+dependencies {
+
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.2'
+
+//    compile group: 'net.sf.saxon', name: 'Saxon-HE', version: '9.7.0-11'
+//    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.7'
+    testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    testCompile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.5'
+
+
+}
+
+jar {
+    baseName = 'd4.bp.demo'
+    //version = '0.0.1-SNAPSHOT'
+    manifest {
+        attributes(
+                'Implementation-Version': version,
+                'Implementation-Title': 'tdp beanpolicy analyzer',
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.datalex.tdp.analyzer.api.CollectAllInfo'
+        )
+    }
+}
+
+
+checkstyle {
+    configFile file('google_checks.xml')
+    toolVersion '8.0'    // set Checkstyle version here
+    showViolations = true
+    checkstyleTest.enabled = false
+}
