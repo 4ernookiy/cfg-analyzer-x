@@ -23,7 +23,7 @@ public final class Factory implements IFactory
     private static final Logger logger = LoggerFactory.getLogger(Factory.class);
     private static final IFactory factory = new Factory();
     public static Boolean necessaryToLoadConfig = true;
-//check repo
+
     private Factory()
     {
     }
