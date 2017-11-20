@@ -94,7 +94,7 @@ window["com.datalex.viewer.xclient"] = (function() {
 			var textBeanOrder = i < 9 ? ("_" + (i+1) + " "): (i+1) + " ";
 			
 			label.appendChild(getI_el("S", "c.S"));
-
+			
 			label.appendChild(getSpan(textBeanOrder, "beanOrder"));
 
 			label.appendChild(getSpan(srv.remoteImpl, "beanName"));
@@ -214,6 +214,9 @@ window["com.datalex.viewer.xclient"] = (function() {
 
 	function getI_el(text, defTagText) {
 		var tag = document.createElement("i");
+		tag.setAttribute("onMouseOver", "tooltip(this,'S: ServiceName " +
+				"X: JXPathRulesClients C: Categories R: Rules')"); 
+		tag.setAttribute("onMouseOut", "hide_info(this)"); 
 		var tagText = document.createTextNode(text);
 		tag.appendChild(tagText);
 		tag.setAttribute("def", defTagText);

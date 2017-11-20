@@ -13,34 +13,20 @@
 <meta name="description" content="try to analize this hell">
 <meta name="copyright" content="D4">
 <link rel="icon" href="${pageContext.request.contextPath}/favicon.ico">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/win.css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/win.js"></script>
 <script>
-	var ctx = "${pageContext.request.contextPath}"
+	var ctx = "${pageContext.request.contextPath}"	
 </script>
-
 <jsp:include page="static/import.jsp"></jsp:include>
-
 </head>
 <body>
-
-
 	<div class="container">
+	<div id="win" ></div>
 		<div id="detailData"></div>
 		<div id="beanPolicyData">
 			<ol id="tdpdata" class="tree"></ol>
 		</div>
 	</div>
-
-
-
-
-
-	<!--     <div class="container"> -->
-	<!-- 		<div id="detailData"> -->
-	<!-- 		</div> -->
-	<!-- 		<div id="beanPolicyData"> -->
-	<!-- 			<ol id="tdpdata" class="tree"></ol> -->
-	<!-- 		</div> -->
-	<!-- 	</div> -->
-	<%-- 	<jsp:include page="static/tmplt_mouse_menu.jsp"></jsp:include> --%>
 </body>
 </html>
