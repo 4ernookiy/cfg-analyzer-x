@@ -14,3 +14,5 @@ request.setAttribute("dateValue", timestamp);
 <link href="${pageContext.request.contextPath}/static/template.css?${dateValue}" rel="stylesheet">
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/tools.js?"></script>
 <%-- <script type="text/javascript" src="${pageContext.request.contextPath}/static/menu.js?${dateValue}"></script> --%>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/win.css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/win.js"></script>

@@ -13,8 +13,6 @@
 <meta name="description" content="try to analize this hell">
 <meta name="copyright" content="D4">
 <link rel="icon" href="${pageContext.request.contextPath}/favicon.ico">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/win.css">
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/win.js"></script>
 <script>
 	var ctx = "${pageContext.request.contextPath}"	
 </script>
