@@ -48,13 +48,23 @@ window["com.datalex.viewer.xclient"] = (function() {
         $.getJSON(_url_api_bp, function(data) {
             log("recived from url");
             _data = data;
+            if (_data == null)
+        	{
+        		var newDiv = document.createElement("div");
+                newDiv.innerHTML = "<h1 align=\"center\">Configuration error!</h1>";
+               
+                document.body.appendChild(newDiv); 
+        	}
             log(_data[0]);
             generate();
             collapse();
         });
+        
+        
     }
 
     function generate() {
+    	
         var tagdata = document.getElementById(_id.tdpdata);
 
         for (i = 0; i < _data.length; i++) { //srv			
